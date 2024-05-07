@@ -41,4 +41,3 @@ Clone of Weekday's product: Candidate application platform for browsing job list
   - App.css
   - App.jsx
 
-## Note
