@@ -4,9 +4,9 @@ import PropTypes from "prop-types";
 
 const JobCardList = ({ data }) => {
     return (
-      <Grid>
+      <Grid container lg={12} padding={2} spacing={2}>
       {data.map((card, id) => (
-        <Grid key={id}>
+        <Grid key={id} item lg={4} xs={12} sm={6}>
           <JobCard data={card} />
         </Grid>
       ))}
