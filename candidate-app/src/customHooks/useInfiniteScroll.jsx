@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
 
 const useInfiniteScroll = (fetchData, offset, setOffset) => {
-  // State to track loading status
   const [loading, setLoading] = useState(false);
-
-  // Add event listener when component mounts, for infinite scrolling
+  // Listens for scroll events and cleans up after unmounting.
   useEffect(() => {
     window.addEventListener("scroll", infiniteScroll);
     return () => window.removeEventListener("scroll", infiniteScroll);
@@ -13,6 +11,7 @@ const useInfiniteScroll = (fetchData, offset, setOffset) => {
   const infiniteScroll = () => {
     try {
       if (
+        // Checks if the user has scrolled to the bottom of the page.
         window.innerHeight + document.documentElement.scrollTop + 1 >=
         document.documentElement.scrollHeight
       ) {
@@ -27,7 +26,7 @@ const useInfiniteScroll = (fetchData, offset, setOffset) => {
     }
   };
 
-  // Return loading state
+
   return loading;
 };
 
