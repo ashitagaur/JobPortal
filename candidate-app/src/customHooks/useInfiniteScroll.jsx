@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 const useInfiniteScroll = (fetchData, offset, setOffset) => {
   const [loading, setLoading] = useState(false);
+  
   // Listens for scroll events and cleans up after unmounting.
   useEffect(() => {
     window.addEventListener("scroll", infiniteScroll);
