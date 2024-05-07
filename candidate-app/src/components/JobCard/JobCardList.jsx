@@ -1,12 +1,23 @@
+import JobCard from './JobCard';
+import { Grid } from '@mui/material';
 
-import JobCard from './JobCard'
+import PropTypes from "prop-types";
 
-const JobCardList = () => {
+const JobCardList = ({ data }) => {
     return (
-        <>
-         <JobCard />
-        </>    
+      <Grid>
+      {data.map((card, id) => (
+        <Grid key={id}>
+          <JobCard data={card} />
+        </Grid>
+      ))}
+    </Grid>   
     );
   };
+
+  JobCardList.propTypes = {
+    data: PropTypes.array.isRequired,
+  };
+  
 
   export default JobCardList;
