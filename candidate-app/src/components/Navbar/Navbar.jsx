@@ -9,7 +9,6 @@ import { Badge, Grid, Tab, Tabs } from "@mui/material";
 const MultiSelect = lazy(() => import("../Filter/MultiSelect"));
 
 const Navbar = ({ data, setFilteredData }) => {
-  const [value, setValue] = useState(1);
 
   const roles = [...new Set(data.map((job) => job.jobRole))];
   const location = [...new Set(data.map((job) => job.location))];
@@ -69,16 +68,16 @@ const Navbar = ({ data, setFilteredData }) => {
   useEffect(() => {
     setFilteredData(data);
   }, [data]);
-  
-  const handleRoleChange = (event, value) => {
+
+  const handleRoleChange = (event) => {
     setSelectedRoles(event.join(""));
   };
 
-  const handleModeChange = (event, value) => {
+  const handleModeChange = (event) => {
     setSelectedMode(event.join(""));
   };
 
-  const handleExperienceChange = (event, inputs) => {
+  const handleExperienceChange = (event) => {
     console.log(typeof +event);
     setSelectedExperience(event);
   };
@@ -101,7 +100,7 @@ const Navbar = ({ data, setFilteredData }) => {
           margin: "1rem",
         }}
       >
-        <Tabs value={value}>
+        <Tabs>
           <Tab label="Applied jobs" disabled />
           <Tab label="Search jobs" />
           <Badge
@@ -116,7 +115,6 @@ const Navbar = ({ data, setFilteredData }) => {
           <Tab label="Suggested jobs" disabled />
         </Tabs>
       </Box>
-      <p>Navbar</p>
       <Grid lg={10} item container spacing={2} style={{ margin: "2px" }}>
         <Suspense fallback={<Loading />}>
           <Grid item lg={2} xs={6} sm={6}>
