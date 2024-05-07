@@ -102,9 +102,18 @@ const Navbar = ({ data, setFilteredData }) => {
       >
         <Tabs>
           <Tab label="Applied jobs" disabled />
+          <Badge
+            badgeContent={1}
+            color="primary"
+            style={{
+              position: "relative",
+              top: "0.7rem",
+              right: "0",
+            }}
+          ></Badge>
           <Tab label="Search jobs" />
           <Badge
-            badgeContent={160}
+            badgeContent={85}
             color="primary"
             style={{
               position: "relative",
@@ -113,6 +122,16 @@ const Navbar = ({ data, setFilteredData }) => {
             }}
           ></Badge>
           <Tab label="Suggested jobs" disabled />
+          <Badge
+            badgeContent={22}
+            color="primary"
+            style={{
+              position: "relative",
+              top: "0.7rem",
+              right: "0",
+              marginRight:"30px"
+            }}
+          ></Badge>
         </Tabs>
       </Box>
       <Grid lg={10} item container spacing={2} style={{ margin: "2px" }}>
